@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+<title>Forgive Me ❤️</title>
+</head>
+<body>
+
+<audio autoplay loop><source src="song.mp3"></audio>
+
+<div class="page fade">
+
+<h1>Will you forgive me? 🥺❤️</h1>
+
+<div class="choices">
+<button onclick="yes()">Yes 💖</button>
+<button id="noBtn" onclick="no()">No 😤</button>
+</div>
+
+</div>
+
+<script>
+function yes(){
+  document.body.classList.add("flip");
+  setTimeout(()=> window.location.href="yes.html", 600);
+}
+
+function no(){
+  document.body.classList.add("flip");
+  setTimeout(()=> window.location.href="no.html", 600);
+}
+</script>
+
+</body>
+</html>

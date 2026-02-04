@@ -1,0 +1,161 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Segoe UI',sans-serif;
+}
+
+/* ===============================
+   Background
+================================ */
+
+body{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:auto;
+
+  background:url("bg.jpg") center/cover no-repeat;
+  position:relative;
+}
+
+/* dark overlay */
+body::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.45);
+  pointer-events:none;
+  z-index:1;
+}
+
+/* ===============================
+   Cards / Pages
+================================ */
+
+.hero,.page{
+  position:relative;
+  z-index:2;
+
+  text-align:center;
+  color:white;
+
+  background:rgba(255,255,255,0.12);
+  backdrop-filter:blur(18px);
+
+  padding:40px;
+  border-radius:25px;
+
+  width:min(92%, 420px);
+
+  box-shadow:0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* fade animation */
+.fade{
+  animation:fadeIn 1.2s ease;
+}
+
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(30px)}
+  to{opacity:1}
+}
+
+/* ===============================
+   Text
+================================ */
+
+h1{
+  margin-bottom:15px;
+}
+
+p{
+  line-height:1.6;
+  margin-top:10px;
+}
+
+/* ===============================
+   Buttons
+================================ */
+
+button{
+  padding:12px 25px;
+  border:none;
+  border-radius:12px;
+  cursor:pointer;
+  font-weight:bold;
+  margin-top:20px;
+  transition:.3s;
+}
+
+button:hover{
+  transform:scale(1.1);
+  box-shadow:0 8px 20px rgba(255,255,255,.4);
+}
+
+/* ===============================
+   Floating Hearts
+================================ */
+
+.hearts{
+  position:absolute;
+  width:100%;
+  height:100%;
+  z-index:2;
+  pointer-events:none;
+}
+
+.heart{
+  position:absolute;
+  color:white;
+  font-size:20px;
+}
+
+/* ===============================
+   Gallery
+================================ */
+
+.gallery img{
+  width:170px;
+  border-radius:20px;
+  margin:10px;
+  box-shadow:0 10px 25px rgba(255,255,255,0.5);
+  transition:.4s;
+}
+
+.gallery img:hover{
+  transform:scale(1.1);
+}
+
+/* ===============================
+   Video
+================================ */
+
+video{
+  width:100%;
+  max-width:300px;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.6);
+}
+
+/* ===============================
+   Flip Animation
+================================ */
+
+.flip{
+  animation:flipPage .6s ease;
+}
+
+@keyframes flipPage{
+  from{transform:rotateY(0);opacity:1}
+  to{transform:rotateY(90deg);opacity:0}
+}
+
+/* ===============================
+   Utility
+================================ */
+
+.hidden{
+  display:none;
+}
